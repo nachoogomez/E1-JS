@@ -153,6 +153,7 @@ for (let i = 0; i < pizzas.length; i++) {
      }
     else {
          result.innerHTML = `No hay ninguna pizza con el id #${number}`;
+         precio.innerHTML = ``;
  } 
 }
 
