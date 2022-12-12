@@ -104,7 +104,7 @@ const pizzas = [
 
 // a)  Las pizzas que tengan un id impar
 
-const pizzaImpar = pizzas.filter((pizza) => pizza.id % 2 !== 0)
+// const pizzaImpar = pizzas.filter((pizza) => pizza.id % 2 !== 0)
 
 // b) ¿Hay alguna pizza que valga menos de $600?
 
@@ -130,6 +130,37 @@ for (let i = 0; i < pizzas.length; i++) {
 }
 
 
-console.log(`Las pizzas que tienen un id impar son las siguientes: ${pizzaImpar.map((pizza) => `${pizza.nombre} con el id ${pizza.id}`)}`)
-console.log(`La pizza ${pizzaPrecio.nombre} tiene un valor de ${pizzaPrecio.precio}`)
-pizzaNYP.map((pizza) => console.log(`La ${pizza.nombre} sale $${pizza.precio}`))
+//console.log(`Las pizzas que tienen un id impar son las siguientes: ${pizzaImpar.map((pizza) => `${pizza.nombre} con el id ${pizza.id}`)}`)
+//console.log(`La pizza ${pizzaPrecio.nombre} tiene un valor de ${pizzaPrecio.precio}`)
+//pizzaNYP.map((pizza) => console.log(`La ${pizza.nombre} sale $${pizza.precio}`))
+
+
+// E2 //
+
+ const numero=document.getElementById("number")
+ const form=document.getElementById("formulario")
+ const boton=document.getElementById("button")
+ const result=document.getElementById("name")
+ const precio=document.getElementById("price")
+
+ const showPizza = () => {
+     const number = parseInt(numero.value);
+     const pizza = pizzas.find(pizza => pizza.id === number);
+
+    if (pizza){
+         result.innerHTML = `La pizza ${pizza.nombre}`;
+         precio.innerHTML = `tiene el valor de $${pizza.precio}`;
+     }
+    else {
+         result.innerHTML = `No hay ninguna pizza con el id #${number}`;
+ } 
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    showPizza();
+  })
+
+
+
+
