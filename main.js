@@ -151,6 +151,10 @@ for (let i = 0; i < pizzas.length; i++) {
          result.innerHTML = `La pizza ${pizza.nombre}`;
          precio.innerHTML = `tiene el valor de $${pizza.precio}`;
      }
+    else if(numero.value === ""){
+        result.innerHTML = `Por favor, ingrese un numero`;
+         precio.innerHTML = ``;
+    }
     else {
          result.innerHTML = `No hay ninguna pizza con el id #${number}`;
          precio.innerHTML = ``;
